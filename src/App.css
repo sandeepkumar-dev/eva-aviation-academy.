@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+/* Header.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  background-color: green;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 200px;
+  padding: 10px 50px; /* Adjust padding as needed */
+  background-color: #f3f3f3; /* Change background color */
+  background-image: linear-gradient(rgb(231, 212, 235), rgb(69, 157, 239));
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.App-link {
-  color: #61dafb;
+.logo img {
+  height: 80px; /* Adjust logo height as needed */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar h1 {
+  /* font-family: cursive; */
+  font-size: 3rem; /* Adjust font size as needed */
+  /* background: linear-gradient(to right, #2160f3, #1e150f, #1fc348, #4490ee); */
+  /* -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text; */
+}
+
+.menu {
+  display: block;
+  padding: 10px 0; /* Adjust padding as needed */
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  display: flex; /* Make the links flex items */
+}
+
+.nav-links li {
+  margin-right: 10px; /* Adjust spacing between links */
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #0e0404; /* Change link color */
+  font-size: 1.2rem; /* Adjust font size as needed */
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.nav-links a:hover {
+  border-radius: 50%;
+  color: rgb(16, 158, 224);
+  background-color: #f8f4f4; /* Change hover background color */
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.checkbox-toggle {
+  display: none;
+}
+
+.divider {
+  background-image: linear-gradient(rgb(231, 212, 235), rgb(69, 157, 239));
+  padding-bottom: 2px;
+}
+
+@media (max-width: 980px) {
+  .hamburger {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  .navbar h1 {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .logo img {
+    width: 300px;
+    height: 100px;
+  }
+
+  .checkbox-toggle:checked ~ .menu {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #f3f3f3; /* Change background color */
+    background-image: linear-gradient(rgb(231, 212, 235), rgb(69, 157, 239));
+
+    padding: 10px 0; /* Adjust padding as needed */
+  }
+
+  .nav-links {
+    flex-direction: row; /* Change direction to column */
+    align-items: center; /* Center items vertically */
+  }
+
+  .nav-links li {
+    margin-right: 0; /* Reset margin for vertical layout */
+    margin-bottom: 10px; /* Add spacing between links vertically */
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 15px; /* Adjust padding as needed */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navabar h1 {
+    display: none;
+  }
+  .logo img {
+    height: 100px;
+    width: 180px;
+  }
+  .nav-links {
+    flex-direction: row; /* Change direction to column */
+    align-items: center; /* Center items vertically */
+  }
+  .nav-links a {
+    font-size: 1rem;
+    padding: 7px;
   }
 }
