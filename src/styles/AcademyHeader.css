@@ -6,32 +6,37 @@
   width: 100%;
   background-color: rgb(255, 249, 249);
   color: black;
-  /* position: fixed; */
-
-  /* border: 1px solid black; */
 }
+
 .header-1 {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
-/* .header-1 h1 {
-      font-size: 3.5rem;
-      font-family: cursive;
-      color: rgb(7, 74, 155);
-    } */
 
 .header img {
   width: 300px;
   height: 80px;
   margin-left: 30px;
   margin-right: 30px;
-
-  /* border-radius: 50%; */
 }
+
 .header .logo2 {
   width: 400px;
 }
+
+.header ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.header ul li {
+  position: relative;
+  margin-right: 20px;
+}
+
 .header ul a {
   cursor: pointer;
   text-decoration: none;
@@ -39,17 +44,15 @@
   padding: 10px;
   font-size: 1.2rem;
 }
+
 .header ul a:hover {
   border-radius: 50%;
   background-color: black;
   color: rgb(98, 176, 235);
 }
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
 
-.dropdown-content {
+.dropdown .dropdown-content,
+.nested-dropdown .nested-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -58,20 +61,30 @@
   z-index: 1;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover > .dropdown-content {
   display: block;
 }
 
-.dropdown-content a {
+.nested-dropdown:hover > .nested-content {
+  display: block;
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-content a,
+.nested-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover,
+.nested-content a:hover {
   background-color: #f1f1f1;
 }
+
 .background-image img {
   width: 100%;
   height: 700px;
@@ -90,6 +103,7 @@
     height: auto;
     padding: 10px;
   }
+
   .header h1 {
     display: none;
   }
@@ -98,8 +112,14 @@
     width: 220px;
     margin-bottom: 10px;
   }
+
   .header .logo2 {
     width: 300px;
+  }
+
+  .header ul {
+    flex-direction: column;
+    align-items: center;
   }
 
   .header ul li {
